@@ -27,7 +27,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   return (
     <CldUploadWidget 
       onUpload={handleUpload} 
-      uploadPreset={uploadPreset}
+      uploadPreset="nnffopcl"
       options={{
         maxFiles: 1
       }}
@@ -35,7 +35,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       {({ open }) => {
         return (
           <div
-            onClick={() => open?.()}
+            onClick={() => open()}
             className="
               relative
               cursor-pointer
