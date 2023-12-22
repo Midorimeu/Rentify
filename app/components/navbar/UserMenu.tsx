@@ -32,6 +32,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
+  //вызов login-menu для не зарегистрированных user
   const onRent = useCallback(() => {
     if (!currentUser) {
       return loginModal.onOpen();

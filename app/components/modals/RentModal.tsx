@@ -22,6 +22,7 @@ import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
 
+//Шаги добавления пунктов Listning creation для Properties 
 enum STEPS {
   CATEGORY = 0,
   LOCATION = 1,
@@ -61,6 +62,7 @@ const RentModal = () => {
     }
   });
 
+//await for watch custom Inputs
   const location = watch('location');
   const category = watch('category');
   const guestCount = watch('guestCount');
@@ -72,7 +74,8 @@ const RentModal = () => {
     ssr: false 
   }), [location]);
 
-
+//React-form-hook устанавливает default значение, но он не re-render-ит траницу
+//Поэтому ее нужно немного закастомить   
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
@@ -144,6 +147,7 @@ const RentModal = () => {
           overflow-y-auto
         "
       >
+        {/* Используем  массив item category при помощи map function*/}
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
@@ -274,7 +278,7 @@ const RentModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={rentModal.isOpen}
-      title="Airbnb your home!"
+      title="Rentify your home!"
       actionLabel={actionLabel}
       onSubmit={handleSubmit(onSubmit)}
       secondaryActionLabel={secondaryActionLabel}

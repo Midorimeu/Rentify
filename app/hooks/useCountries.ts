@@ -1,10 +1,11 @@
+//устанавливаем и ипоьзуем библиотеку Стран Мира
 import countries from 'world-countries';
 
 const formattedCountries = countries.map((country) => ({
   value: country.cca2,
   label: country.name.common,
   flag: country.flag,
-  latlng: country.latlng,
+  latlng: country.latlng, //широта и долгота
   region: country.region,
 }));
 
