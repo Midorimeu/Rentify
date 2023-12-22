@@ -40,6 +40,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
   const location = getByValue(data.locationValue);
 
+  // StopPropagation - предотвращает дальнейшее распространение текущего события на этапах capturing and bubbling(захвата и барботирования)
+
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
